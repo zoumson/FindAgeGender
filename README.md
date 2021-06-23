@@ -12,8 +12,8 @@
 [![Stack Overflow][stackoverflow-shield]][stackoverflow.com/users/11175375/adam]
 [![Leetcode][leetcode-shield]][eetcode.com/Hard_Code/]
 -->
-## Basic opencv image manipulation
-
+## Augmented Reality
+![output](https://user-images.githubusercontent.com/38358621/123144894-c88c1400-d48e-11eb-94b2-0f55cabeb920.jpg)
 <!-- TABLE OF CONTENTS -->
 <details open="open">
   <summary>Table of Contents</summary>
@@ -51,11 +51,8 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-
 <!-- [![Product Name Screen Shot][product-screenshot]](https://example.com) -->
-
-Read, show, clone image in opencv
-
+Mouse cursor position prediction.
 <!--Built with -->
 ### Built With
 
@@ -63,7 +60,6 @@ Read, show, clone image in opencv
 
 * [opencv](https://opencv.org/)
 * [cmake](https://cmake.org/)
-* [gnu](https://www.gnu.org/)
 
 <br>
 
@@ -71,24 +67,27 @@ Read, show, clone image in opencv
 
 ### Folders
 
-* [include/](include/): c++ header files.
+* [resource/](resource/): images.
 * [src/](src/): c++ definitions.
 
 
 ### Entire Files Structure 
 
-
 ```
 .
 ├── CMakeLists.txt
-├── include
 ├── README.md
-├── ressource
-│   └── happy.jpeg
+├── resource
+│   └── image
+│       ├── augmented-reality-example.jpg
+│       ├── me.jpg
+│       ├── new_scenery.jpg
+│       ├── test_ar_out_cpp.jpg
+│       └── test.jpg
 └── src
-    └── imageBasics.cpp
+    └── demo.cpp
 
-
+3 directories, 8 files
 
 ```
 
@@ -96,7 +95,7 @@ Read, show, clone image in opencv
 <!-- GETTING STARTED -->
 ## Getting Started
 
-This is a sample code of how you may use  the opencv basic libs.
+This is a sample code of how you may use  the opencv aruco for augmented reality.
 To get a local copy up and running follow these simple steps.
 
 ### Prerequisites
@@ -106,114 +105,56 @@ This is an example of how to list things you need to use the software and how to
   ```sh
   sudo apt-get install cmake
   ```
-* [Install](https://askubuntu.com/questions/342202/failed-to-load-module-canberra-gtk-module-but-already-installed) `gtk` and `gtk3` module to access `canberra-gtk-module` used by `opencv imshow`
- 
-  ```sh
-  sudo apt install libcanberra-gtk-module libcanberra-gtk3-module
-  ```
- * Install first `opencv4` cpp libraries 
 
-
+ * opencv4
  ```sh
- sudo apt-get update
- ```
- ```sh
- sudo apt-get upgrade
- ```
- 
- ```sh
- sudo apt-get install build-essential cmake git libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev
+ sudo su
  ```
  ```sh
- sudo apt-get install  python3-numpy libtbb2 libtbb-dev
- ```
- ```sh
- sudo apt-get install libjpeg-dev libpng-dev libtiff5-dev libdc1394-22-dev libeigen3-dev libtheora-dev libvorbis-dev libxvidcore-dev libx264-dev sphinx-common       libtbb-dev yasm libfaac-dev libopencore-amrnb-dev libopencore-amrwb-dev libopenexr-dev libgstreamer-plugins-base1.0-dev libavutil-dev libavfilter-dev             libavresample-dev
- ```
- 
- ```sh
- cd /opt
- ```
- ```sh
- git clone https://github.com/Itseez/opencv.git
- ```
- 
- ```sh
- git clone https://github.com/Itseez/opencv_contrib.git
- ```
- ```
- cd opencv
- ```
- ```
- mkdir release
- ```
- ```
- cd release
- ```
- 
- 
- ```sh
- cmake -D BUILD_TIFF=ON -D WITH_CUDA=OFF -D ENABLE_AVX=OFF -D WITH_OPENGL=OFF -D WITH_OPENCL=OFF -D WITH_IPP=OFF -D WITH_TBB=ON -D BUILD_TBB=ON 
- -D WITH_EIGEN=OFF   -D WITH_V4L=OFF -D WITH_VTK=OFF -D BUILD_TESTS=OFF -D BUILD_PERF_TESTS=OFF -D CMAKE_BUILD_TYPE=RELEASE 
- -D CMAKE_INSTALL_PREFIX=/usr/local -D    OPENCV_EXTRA_MODULES_PATH=/opt/opencv_contrib/modules /opt/opencv/
- ```
- ```
- make -j4
- ```
- ```
- make install
- ```
- ```
- ldconfig
- ```
- ```
- sudo apt install libopencv-dev
- ```
- check opencv path
- ```
- pkg-config --cflags opencv4
- ```
- check opencv libs
- ```
-  pkg-config --libs opencv4
- ```
- check opencv version
- ```
-  pkg-config --modversion opencv4
+git clone https://github.com/zoumson/OpencvInstall.git     \
+&& cd OpencvInstall && chmod +x install.sh && ./install.sh
  ```
 ### Installation
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/zoumson/Image.git
+   git clone https://github.com/zoumson/AugmentedReality.git
    ```
 2. Go to the project directory source
    ```sh
-   cd Image
+   cd AugmentedReality
    ```
-3. Create empty directories `build`, and `bin`
+3. Create empty directories 
    ```sh
-   mkdir build &&  mkdir bin 
+   mkdir build &&  mkdir bin && mkdir result && cd result && mkdir image && cd ..
    ```
-5. Generate the exectutable `imageBasics` and move it to `bin`
+5. Generate the exectutable and move it to `bin`
    ```sh
    cd build && cmake .. && make -j4 && cd ..
    ```
 
 <!-- USAGE EXAMPLES -->
 ### Usage
-1. Run for matrix usage 
-   ```sh
-   ./bin/imageBasics ./ressource/happy.jpeg
-   ```
-2. Output
-   ```sh
 
-   ```
+1. Run the executable 
+ ```sh
+   ./bin/demo -o=1 -i=./resource/image/test.pg -n=./resource/image/me.jpg
+```
+2. Original Image
 
-4. Back to the initial file structure configuration
+![test](https://user-images.githubusercontent.com/38358621/123138664-e30ebf00-d487-11eb-80ef-fc605b143b34.jpg)
+
+3. Image used to replace the existing scenaring in the square
+
+![me](https://user-images.githubusercontent.com/38358621/123144847-ba3df800-d48e-11eb-8f63-badc55b7f21f.jpg)
+
+4. Output image 
+
+![output](https://user-images.githubusercontent.com/38358621/123144894-c88c1400-d48e-11eb-94b2-0f55cabeb920.jpg)
+
+5. Back to the initial file structure configuration
    ```sh
-   rm -r bin build 
+   rm -r bin build result 
    ```
 <!-- ROADMAP -->
 ## Roadmap
@@ -245,7 +186,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 Adama Zouma - <!-- [@your_twitter](https://twitter.com/your_username) -->- stargue49@gmail.com
 
-Project Link: [https://github.com/zoumson/Image](https://github.com/zoumson/Image.git)
+Project Link: [https://github.com/zoumson/AugmentedReality](https://github.com/zoumson/AugmentedReality.git)
 
 
 
