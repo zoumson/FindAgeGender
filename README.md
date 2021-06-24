@@ -12,8 +12,8 @@
 [![Stack Overflow][stackoverflow-shield]][stackoverflow.com/users/11175375/adam]
 [![Leetcode][leetcode-shield]][eetcode.com/Hard_Code/]
 -->
-## Augmented Reality
-![output](https://user-images.githubusercontent.com/38358621/123144894-c88c1400-d48e-11eb-94b2-0f55cabeb920.jpg)
+## Identify Gender and Age From Face Using DNN
+![d](https://user-images.githubusercontent.com/38358621/123162190-e5324700-d4a2-11eb-9b61-316e6c7a17f5.png)
 <!-- TABLE OF CONTENTS -->
 <details open="open">
   <summary>Table of Contents</summary>
@@ -52,7 +52,12 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 <!-- [![Product Name Screen Shot][product-screenshot]](https://example.com) -->
-Mouse cursor position prediction.
+Age and gender estimation based on face images plays an important role in a wide range of scenarios, including 
+* security and defense applications, 
+* * border control, 
+* human-machine interaction in ambient intelligence applications, and 
+* recognition based on soft biometric information
+In this project a pre-trained deep neural network model is used to first detect faces from a given image. The face detected is then used for gender and age estimation. 
 <!--Built with -->
 ### Built With
 
@@ -78,16 +83,23 @@ Mouse cursor position prediction.
 ├── CMakeLists.txt
 ├── README.md
 ├── resource
-│   └── image
-│       ├── augmented-reality-example.jpg
-│       ├── me.jpg
-│       ├── new_scenery.jpg
-│       ├── test_ar_out_cpp.jpg
-│       └── test.jpg
+│   ├── image
+│   │   └── christiano.png
+│   ├── model
+│   │   ├── age_net.caffemodel
+│   │   ├── gender_net.caffemodel
+│   │   └── opencv_face_detector_uint8.pb
+│   ├── proto
+│   │   ├── age_deploy.prototxt
+│   │   ├── gender_deploy.prototxt
+│   │   └── opencv_face_detector.pbtxt
+│   └── video
+│       └── video.mp4
 └── src
     └── demo.cpp
 
-3 directories, 8 files
+6 directories, 11 files
+
 
 ```
 
@@ -95,7 +107,7 @@ Mouse cursor position prediction.
 <!-- GETTING STARTED -->
 ## Getting Started
 
-This is a sample code of how you may use  the opencv aruco for augmented reality.
+This is a sample code of how you may use  the opencv dnn to detect face, gender and age.
 To get a local copy up and running follow these simple steps.
 
 ### Prerequisites
@@ -107,6 +119,8 @@ This is an example of how to list things you need to use the software and how to
   ```
 
  * opencv4
+
+ *Installation*
  ```sh
  sudo su
  ```
@@ -114,15 +128,48 @@ This is an example of how to list things you need to use the software and how to
 git clone https://github.com/zoumson/OpencvInstall.git     \
 && cd OpencvInstall && chmod +x install.sh && ./install.sh
  ```
+ *keywords*
+```
+1. cv::dnn::Net
+2. cv::dnn::blobFromImage
+3. cv::Mat
+3. cv::rectangle
+4. cv::Point
+5. cv::Scalar
+6. cv::CommandLineParser
+7. cv::String
+8. cv::VideoCapture
+9. cv::waitKey
+10. cv::putText
+11. cv::imshow
+12. cv::imwrite
+13. cv::FONT_HERSHEY_SIMPLEX
+14. cv::LINE_AA
+```
+* c++ 
+[1/](https://stackoverflow.com/questions/6687107/difference-between-stdpair-and-stdtuple-with-only-two-members/)
+[2/](https://stackoverflow.com/questions/103512/why-use-static-castintx-instead-of-intx)
+[3/](https://stackoverflow.com/questions/43762651/how-does-stdtie-work/)
+[4/](https://www.geeksforgeeks.org/max_element-in-cpp/)
+
+```
+1. std::tuple vs std::pair;
+2. static_cast<int>(x) vs (int)x
+3. std::tie() vs auto[]
+4. std::distance
+5. std::max_element
+6. std::vector
+7. std::string
+```
 ### Installation
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/zoumson/AugmentedReality.git
+   git clone https://github.com/zoumson/FindAgeGender.git
    ```
 2. Go to the project directory source
    ```sh
-   cd AugmentedReality
+   cd FindAgeGender
    ```
 3. Create empty directories 
    ```sh
@@ -138,21 +185,16 @@ git clone https://github.com/zoumson/OpencvInstall.git     \
 
 1. Run the executable 
  ```sh
-   ./bin/demo -o=1 -i=./resource/image/test.pg -n=./resource/image/me.jpg
+   ./bin/demo -i=./resource/image/christiano.png -s=./result/image/output.png
 ```
 2. Original Image
 
-![test](https://user-images.githubusercontent.com/38358621/123138664-e30ebf00-d487-11eb-80ef-fc605b143b34.jpg)
+![christiano](https://user-images.githubusercontent.com/38358621/123162160-db104880-d4a2-11eb-8c32-d1ba2a3119b2.png)
 
-3. Image used to replace the existing scenaring in the square
+3. Output image 
+![d](https://user-images.githubusercontent.com/38358621/123162190-e5324700-d4a2-11eb-9b61-316e6c7a17f5.png)
 
-![me](https://user-images.githubusercontent.com/38358621/123144847-ba3df800-d48e-11eb-8f63-badc55b7f21f.jpg)
-
-4. Output image 
-
-![output](https://user-images.githubusercontent.com/38358621/123144894-c88c1400-d48e-11eb-94b2-0f55cabeb920.jpg)
-
-5. Back to the initial file structure configuration
+4. Back to the initial file structure configuration
    ```sh
    rm -r bin build result 
    ```
@@ -186,7 +228,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 Adama Zouma - <!-- [@your_twitter](https://twitter.com/your_username) -->- stargue49@gmail.com
 
-Project Link: [https://github.com/zoumson/AugmentedReality](https://github.com/zoumson/AugmentedReality.git)
+Project Link: [https://github.com/zoumson/FindAgeGender](https://github.com/zoumson/FindAgeGender.git)
 
 
 
