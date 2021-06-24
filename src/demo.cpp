@@ -132,7 +132,7 @@ int main(int argc, char** argv)
       {
         cv::Rect rec(it->at(0) - padding, it->at(1) - padding, it->at(2) - it->at(0) + 2*padding, it->at(3) - it->at(1) + 2*padding);
         cv::Mat face = frame(rec); // take the ROI of box on the frame
-
+        // Use the face as gender network input
         cv::Mat blob;
         blob = cv::dnn::blobFromImage(face, 1, cv::Size(227, 227), MODEL_MEAN_VALUES, false);
         genderNet.setInput(blob);
@@ -141,7 +141,7 @@ int main(int argc, char** argv)
         // printing gender here
         // find max element index
         // distance function does the argmax() work in C++
-        int max_index_gender = std::distance(genderPreds.begin(), max_element(genderPreds.begin(), genderPreds.end()));
+        int max_index_gender = std::distance(genderPreds.begin(), std::max_element(genderPreds.begin(), genderPreds.end()));
         std::string gender = genderList[max_index_gender];
         std::cout << "Gender: " << gender << "\n";
 
@@ -162,7 +162,7 @@ int main(int argc, char** argv)
         */
 
         // finding maximum indicd in the age_preds std::vector
-        int max_indice_age = std::distance(agePreds.begin(), max_element(agePreds.begin(), agePreds.end()));
+        int max_indice_age = std::distance(agePreds.begin(), std::max_element(agePreds.begin(), agePreds.end()));
         std::string age = ageList[max_indice_age];
         std::cout << "Age: " << age << "\n";
         std::string label = gender + ", " + age; // label
