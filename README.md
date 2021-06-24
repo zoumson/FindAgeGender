@@ -114,6 +114,8 @@ This is an example of how to list things you need to use the software and how to
   ```
 
  * opencv4
+
+ *Installation*
  ```sh
  sudo su
  ```
@@ -121,6 +123,7 @@ This is an example of how to list things you need to use the software and how to
 git clone https://github.com/zoumson/OpencvInstall.git     \
 && cd OpencvInstall && chmod +x install.sh && ./install.sh
  ```
+ *keywords*
 ```
 1. cv::dnn::Net
 2. cv::dnn::blobFromImage
@@ -151,13 +154,7 @@ git clone https://github.com/zoumson/OpencvInstall.git     \
 4. std::distance
 5. std::max_element
 6. std::vector
-7. std::stringcv::VideoCapture
-9. cv::waitKey
-10. cv::putText
-11. cv::imshow
-12. cv::imwrite
-13. cv::FONT_HERSHEY_SIMPLEX
-14. cv::LINE_AA
+7. std::string
 ```
 ### Installation
 
