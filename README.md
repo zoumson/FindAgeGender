@@ -54,7 +54,7 @@
 <!-- [![Product Name Screen Shot][product-screenshot]](https://example.com) -->
 Age and gender estimation based on face images plays an important role in a wide range of scenarios, including 
 * security and defense applications, 
-* * border control, 
+* border control, 
 * human-machine interaction in ambient intelligence applications, and 
 * recognition based on soft biometric information
 In this project a pre-trained deep neural network model is used to first detect faces from a given image. The face detected is then used for gender and age estimation. 
