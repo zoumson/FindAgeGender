@@ -65,7 +65,7 @@ In this project a pre-trained deep neural network model is used to first detect 
 
 * [opencv](https://opencv.org/)
 * [cmake](https://cmake.org/)
-
+* [caffe model](https://www.scilab.org/deep-learning-using-caffe-model/)
 <br>
 
 ## File Structure
