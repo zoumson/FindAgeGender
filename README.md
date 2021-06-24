@@ -12,7 +12,7 @@
 [![Stack Overflow][stackoverflow-shield]][stackoverflow.com/users/11175375/adam]
 [![Leetcode][leetcode-shield]][eetcode.com/Hard_Code/]
 -->
-## Identify Gender and Age
+## Identify Gender and Age From Face Using DNN
 ![d](https://user-images.githubusercontent.com/38358621/123162190-e5324700-d4a2-11eb-9b61-316e6c7a17f5.png)
 <!-- TABLE OF CONTENTS -->
 <details open="open">
