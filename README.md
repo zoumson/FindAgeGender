@@ -121,6 +121,44 @@ This is an example of how to list things you need to use the software and how to
 git clone https://github.com/zoumson/OpencvInstall.git     \
 && cd OpencvInstall && chmod +x install.sh && ./install.sh
  ```
+```
+1. cv::dnn::Net
+2. cv::dnn::blobFromImage
+3. cv::Mat
+3. cv::rectangle
+4. cv::Point
+5. cv::Scalar
+6. cv::CommandLineParser
+7. cv::String
+8. cv::VideoCapture
+9. cv::waitKey
+10. cv::putText
+11. cv::imshow
+12. cv::imwrite
+13. cv::FONT_HERSHEY_SIMPLEX
+14. cv::LINE_AA
+```
+* c++ 
+[1/](https://stackoverflow.com/questions/6687107/difference-between-stdpair-and-stdtuple-with-only-two-members/)
+[2/](https://stackoverflow.com/questions/103512/why-use-static-castintx-instead-of-intx)
+[3/](https://stackoverflow.com/questions/43762651/how-does-stdtie-work/)
+[4/](https://www.geeksforgeeks.org/max_element-in-cpp/)
+
+```
+1. std::tuple vs std::pair;
+2. static_cast<int>(x) vs (int)x
+3. std::tie() vs auto[]
+4. std::distance
+5. std::max_element
+6. std::vector
+7. std::stringcv::VideoCapture
+9. cv::waitKey
+10. cv::putText
+11. cv::imshow
+12. cv::imwrite
+13. cv::FONT_HERSHEY_SIMPLEX
+14. cv::LINE_AA
+```
 ### Installation
 
 1. Clone the repo
