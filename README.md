@@ -175,7 +175,7 @@ git clone https://github.com/zoumson/OpencvInstall.git     \
    ```sh
    mkdir build &&  mkdir bin && mkdir result && cd result && mkdir image && cd ..
    ```
-5. Generate the exectutable and move it to `bin`
+5. Generate the executable and move it to `bin`
    ```sh
    cd build && cmake .. && make -j4 && cd ..
    ```
